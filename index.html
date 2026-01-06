@@ -4177,25 +4177,28 @@ const addSimpleMarkers = (map, scenesWithLocations) => {
     const el = document.createElement('div');
     el.className = 'custom-marker';
     el.style.cssText = `
-      width: 100px;
-      cursor: pointer;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-      z-index: 1000;
-    `;
+  width: 100px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  position: relative;
+  z-index: 10000 !important;
+`;
 
     const thumbnail = document.createElement('div');
-    thumbnail.style.cssText = `
-      width: 80px;
-      height: 60px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      border: ${scene.id === currentScene.id ? '3px solid #3B82F6' : '2px solid white'};
-      background: #333;
-    `;
+   thumbnail.style.cssText = `
+  width: 80px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  border: ${scene.id === currentScene.id ? '3px solid #3B82F6' : '2px solid white'};
+  background: #FF0000;
+  position: relative;
+  z-index: 10001 !important;
+`;
     
     const img = document.createElement('img');
     img.src = scene.imageUrl;
